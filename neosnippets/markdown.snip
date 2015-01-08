@@ -2,29 +2,6 @@
 " * https://github.com/Shougo/neosnippet-snippets/blob/master/neosnippets/markdown.snip
 " * https://github.com/honza/vim-snippets/blob/master/snippets/markdown.snippets
 
-snippet pic
-abbr ![alt]({{site.imgpath}}/post/pic.jpg){:class="pic"}
-options word
-  ![${1:#:alt}][{{site.imgpath}}/post/${2:#:pic}]{:class="pic"}
-
-snippet arrow
-abbr <i class="fa fa-arrow-right"></i>
-options word
-  <i class="fa fa-arrow-right"></i>
-
-snippet dotted-border
-alias border
-abbr <hr class="dotted-border">
-options head
-  <hr class="dotted-border">
-
-snippet {% codeblock %}
-alias codeblock
-options head
-  {% codeblock lang:${1:#:language} %}
-  ${0:#:code_snippet}
-  {% endcodeblock %}
-
 snippet {% comment %}
 alias comment
 options head
@@ -38,6 +15,53 @@ options head
   {% raw  %}
   ${0:#:rawcode}
   {% endraw %}
+
+snippet {% if %}
+alias if
+  {% if %}
+  ${0:#:conent}
+  {% end %}
+
+snippet {% if %}{% else %}
+alias ifelse
+  {% if %}
+  ${0:#:conent}
+  {% else %}
+  ${1:#:conent}
+  {% end %}
+
+snippet {% unless %}
+alias unless
+  {% unless %}
+  ${0:#:conent}
+  {% endunless %}
+
+snippet {% capture %}
+alias capture
+  {% capture %}${0:#:conent}{% endcapture %}
+
+snippet {% codeblock title lang:lang %}
+alias codebl
+options head
+  {% codeblock ${0:#:title} lang:${1:#:language} %}
+  ${2:#:code_snippet}
+  {% endcodeblock %}
+
+snippet dotted-border
+alias border
+abbr <hr class="dotted-border">
+options head
+  <hr class="dotted-border">
+
+snippet pic
+abbr ![alt]({{site.imgpath}}/post/pic.jpg){:class="pic"}
+options word
+  ![${1:#:alt}][{{site.imgpath}}/post/${2:#:pic}]{:class="pic"}
+
+snippet arrow
+abbr <i class="fa fa-arrow-right"></i>
+options word
+  <i class="fa fa-arrow-right"></i>
 
 snippet {% ps %}
 alias ps
@@ -65,30 +89,6 @@ snippet {% githubrepo %}
 alias githubrepo
 options head
   {% githubrepo ${0:#:repository} %}
-
-snippet {% if %}
-alias if
-  {% if %}
-  ${0:#:conent}
-  {% end %}
-
-snippet {% if %}{% else %}
-alias ifelse
-  {% if %}
-  ${0:#:conent}
-  {% else %}
-  ${1:#:conent}
-  {% end %}
-
-snippet {% unless %}
-alias unless
-  {% unless %}
-  ${0:#:conent}
-  {% endunless %}
-
-snippet {% capture %}
-alias capture
-  {% capture %}${0:#:conent}{% endcapture %}
 
 snippet {% gemoji %}
 alias gemoji

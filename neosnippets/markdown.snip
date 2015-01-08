@@ -1,0 +1,17 @@
+" Snippets for Octopress other than:
+" * https://github.com/Shougo/neosnippet-snippets/blob/master/neosnippets/markdown.snip
+" * https://github.com/honza/vim-snippets/blob/master/snippets/markdown.snippets
+
+snippet pic
+  abbr ![alt]({{site.imgpath}}/post/pic.jpg){:class="pic"}
+  options word
+  ![${1:#:alt}][{{site.imgpath}}/post/${2:#:pic}]{:class="pic"}
+
+snippet arrow
+  abbr <i class="fa fa-arrow-right"></i>
+  <i class="fa fa-arrow-right"></i>
+
+snippet dotted-border
+  alias border
+  abbr <hr class="dotted-border">
+  <hr class="dotted-border">

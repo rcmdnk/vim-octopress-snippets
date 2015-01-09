@@ -3,6 +3,7 @@
 " * https://github.com/honza/vim-snippets/blob/master/snippets/markdown.snippets
 
 snippet {% comment %}
+abbr {% comment %}~{% endcomment %}
 alias comment
 options head
   {% comment  %}
@@ -10,6 +11,7 @@ options head
   {% endcomment %}
 
 snippet {% raw %}
+abbr {% raw %}~{% endraw %}
 alias raw
 options head
   {% raw  %}
@@ -17,12 +19,14 @@ options head
   {% endraw %}
 
 snippet {% if %}
+abbr {% if %}~{% endif %}
 alias if
   {% if %}
   ${0:#:conent}
   {% end %}
 
 snippet {% if %}{% else %}
+abbr {% if %}~{% else %}~{% endif %}
 alias ifelse
   {% if %}
   ${0:#:conent}
@@ -31,16 +35,20 @@ alias ifelse
   {% end %}
 
 snippet {% unless %}
+abbr {% unless %}~{% endunless %}
+alias ifelse
 alias unless
   {% unless %}
   ${0:#:conent}
   {% endunless %}
 
 snippet {% capture %}
+abbr {% capture %}~{% endcapture %}
 alias capture
   {% capture %}${0:#:conent}{% endcapture %}
 
 snippet {% codeblock title lang:lang %}
+abbr {% codeblock #:title lang:#:language %}~{% endcodeblock %}
 alias codebl
 options head
   {% codeblock ${0:#:title} lang:${1:#:language} %}
@@ -54,7 +62,7 @@ options head
   <hr class="dotted-border">
 
 snippet pic
-abbr ![alt]({{site.imgpath}}/post/pic.jpg){:class="pic"}
+abbr ![#:alt]({{site.imgpath}}/post/#:pic){:class="pic"}
 options word
   ![${1:#:alt}][{{site.imgpath}}/post/${2:#:pic}]{:class="pic"}
 
@@ -64,6 +72,7 @@ options word
   <i class="fa fa-arrow-right"></i>
 
 snippet {% ps %}
+abbr {% ps %}~{% endps %}
 alias ps
 options head
   {% ps  %}
@@ -71,26 +80,31 @@ options head
   {% ps %}
 
 snippet {% key %}
+abbr {% key #:key %}
 alias key
 options word
   {% key ${0:#:key} %}
 
 snippet {% key symbol %}
+abbr {% key symbol #:key %}
 alias keysymbol
 options word
   {% key symbol ${0:#:key} %}
 
 snippet {% fnin %}
+abbr {% fnin %}~{% endfnin %}
 alias fnin
 options word
   {% fnin %}${0:#:fn}{% endfnin %}${1}
 
 snippet {% githubrepo %}
+abbr  {% githubrepo #:repository %}
 alias githubrepo
 options head
   {% githubrepo ${0:#:repository} %}
 
 snippet {% gemoji %}
+abbr  {% gemoji #:gemoji %}
 alias gemoji
 options word
   {% gemoji ${0:#:gemoji} %}

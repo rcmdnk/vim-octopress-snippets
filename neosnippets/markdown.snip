@@ -63,7 +63,7 @@ options head
 snippet pic
 abbr ![<alt>]({{site.imgpath}}/post/<pic>){:class="pic"}
 options word
-  ![${1:#:alt}][{{site.imgpath}}/post/${2:#:pic}]{:class="pic"}
+  ![${1:#:alt}][{{site.imgpath}}/post/${2:#:pic}]{:class="pic"}${0}
 
 snippet arrow
 abbr <i class="fa fa-arrow-right"></i>
@@ -81,12 +81,12 @@ options head
 snippet key
 abbr {% key <key> %}
 options word
-  {% key ${1:#:key} %}
+  {% key ${1:#:key} %}${0}
 
 snippet keysymbol
 abbr {% key symbol <key> %}
 options word
-  {% key symbol ${1:TARGET} %}
+  {% key symbol ${1:TARGET} %}${0}
 
 snippet fnin
 abbr {% fnin %}~{% endfnin %}
@@ -96,9 +96,9 @@ options word
 snippet githubrepo
 abbr  {% githubrepo <repository> %}
 options head
-  {% githubrepo ${1:TARGET} %}
+  {% githubrepo ${1:TARGET} %}${0}
 
 snippet gemoji
 abbr  {% gemoji <gemoji> %}
 options word
-  {% gemoji ${1:TARGET} %}
+  {% gemoji ${1:TARGET} %}${0}

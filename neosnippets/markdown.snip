@@ -2,58 +2,57 @@
 " * https://github.com/Shougo/neosnippet-snippets/blob/master/neosnippets/markdown.snip
 " * https://github.com/honza/vim-snippets/blob/master/snippets/markdown.snippets
 
-snippet {% comment %}
+snippet comment
 abbr {% comment %}~{% endcomment %}
-alias comment
 options head
   {% comment  %}
-  ${0:#:comment}
+  ${1:TARGET}
   {% endcomment %}
+  ${0}
 
-snippet {% raw %}
+snippet raw
 abbr {% raw %}~{% endraw %}
-alias raw
 options head
   {% raw  %}
-  ${0:#:rawcode}
+  ${1:TARGET}
   {% endraw %}
+  ${0}
 
-snippet {% if %}
+snippet if
 abbr {% if %}~{% endif %}
-alias if
   {% if %}
-  ${0:#:conent}
-  {% end %}
-
-snippet {% if %}{% else %}
-abbr {% if %}~{% else %}~{% endif %}
-alias ifelse
-  {% if %}
-  ${0:#:conent}
-  {% else %}
   ${1:#:conent}
   {% end %}
+  ${0}
 
-snippet {% unless %}
+snippet ifelse
+abbr {% if %}~{% else %}~{% endif %}
+  {% if %}
+  ${1:#:conent}
+  {% else %}
+  ${2:#:conent}
+  {% end %}
+  ${0}
+
+snippet unless
 abbr {% unless %}~{% endunless %}
-alias ifelse
-alias unless
   {% unless %}
-  ${0:#:conent}
+  ${1:#:conent}
   {% endunless %}
+  ${0}
 
-snippet {% capture %}
+snippet capture
 abbr {% capture %}~{% endcapture %}
 alias capture
-  {% capture %}${0:#:conent}{% endcapture %}
+  {% capture %}${1:#:conent}{% endcapture %}${0}
 
-snippet {% codeblock title lang:lang %}
-abbr {% codeblock #:title lang:#:language %}~{% endcodeblock %}
-alias codebl
+snippet codebl
+abbr {% codeblock <title> lang:<language> %}~{% endcodeblock %}
 options head
-  {% codeblock ${0:#:title} lang:${1:#:language} %}
-  ${2:#:code_snippet}
+  {% codeblock ${1:#:title} lang:${2:#:language} %}
+  ${3:#:code_snippet}
   {% endcodeblock %}
+  ${0}
 
 snippet dotted-border
 alias border
@@ -62,7 +61,7 @@ options head
   <hr class="dotted-border">
 
 snippet pic
-abbr ![#:alt]({{site.imgpath}}/post/#:pic){:class="pic"}
+abbr ![<alt>]({{site.imgpath}}/post/<pic>){:class="pic"}
 options word
   ![${1:#:alt}][{{site.imgpath}}/post/${2:#:pic}]{:class="pic"}
 
@@ -71,40 +70,35 @@ abbr <i class="fa fa-arrow-right"></i>
 options word
   <i class="fa fa-arrow-right"></i>
 
-snippet {% ps %}
+snippet ps
 abbr {% ps %}~{% endps %}
-alias ps
 options head
   {% ps  %}
-  ${0:#:ps}
+  ${1:TARGET}
   {% ps %}
+  ${0}
 
-snippet {% key %}
-abbr {% key #:key %}
-alias key
+snippet key
+abbr {% key <key> %}
 options word
-  {% key ${0:#:key} %}
+  {% key ${1:#:key} %}
 
-snippet {% key symbol %}
-abbr {% key symbol #:key %}
-alias keysymbol
+snippet keysymbol
+abbr {% key symbol <key> %}
 options word
-  {% key symbol ${0:#:key} %}
+  {% key symbol ${1:TARGET} %}
 
-snippet {% fnin %}
+snippet fnin
 abbr {% fnin %}~{% endfnin %}
-alias fnin
 options word
-  {% fnin %}${0:#:fn}{% endfnin %}${1}
+  {% fnin %}${1:TARGET}{% endfnin %}${0}
 
-snippet {% githubrepo %}
-abbr  {% githubrepo #:repository %}
-alias githubrepo
+snippet githubrepo
+abbr  {% githubrepo <repository> %}
 options head
-  {% githubrepo ${0:#:repository} %}
+  {% githubrepo ${1:TARGET} %}
 
-snippet {% gemoji %}
-abbr  {% gemoji #:gemoji %}
-alias gemoji
+snippet gemoji
+abbr  {% gemoji <gemoji> %}
 options word
-  {% gemoji ${0:#:gemoji} %}
+  {% gemoji ${1:TARGET} %}

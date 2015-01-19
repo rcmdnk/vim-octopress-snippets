@@ -50,7 +50,7 @@ snippet codebl
 abbr {% codeblock <title> lang:<language> %}~{% endcodeblock %}
 options head
   {% codeblock ${1:#:title} lang:${2:#:language} %}
-  ${3:#:code_snippet}
+  ${3:TARGET}
   {% endcodeblock %}
 
   ${0}
@@ -65,7 +65,7 @@ options head
 snippet pic
 abbr ![<alt>]({{site.imgpath}}/post/<pic>){:class="pic"}
 options word
-  ![${1:#:alt}]({{site.imgpath}}/post/${2:#:pic}){:class="pic"}
+  ![${1:#:alt}]({{site.imgpath}}/post/${2:TARGET}){:class="pic"}
   
   ${0}
 
@@ -85,12 +85,12 @@ options head
 snippet key
 abbr {% key <key> %}
 options word
-  {% key ${1:#:key} %}${0}
+  {% key ${1:TARGET} %} ${0}
 
 snippet keysymbol
 abbr {% key symbol <key> %}
 options word
-  {% key symbol ${1:TARGET} %}${0}
+  {% key symbol ${1:TARGET} %} ${0}
 
 snippet fnin
 abbr {% fnin %}~{% endfnin %}
@@ -107,4 +107,4 @@ options head
 snippet gemoji
 abbr  {% gemoji <gemoji> %}
 options word
-  {% gemoji ${1:TARGET} %}${0}
+  {% gemoji ${1:TARGET} %} ${0}

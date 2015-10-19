@@ -69,9 +69,9 @@ options word
   <i class="fa fa-arrow-right"></i>
 
 snippet ps
-abbr {% ps %}~{% endps %}
+abbr {% ps `strftime(%Y/%m/%d)` %}~{% endps %}
 options head
-  {% ps  %}
+  {% ps `strftime("%Y/%m/%d")` %}
   ${1:TARGET}
   {% endps %}
   ${0}
